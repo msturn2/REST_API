@@ -51,27 +51,27 @@ module.exports = (sequelize, DataTypes) => {
       },
       estimatedTime: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notNull: {
-            msg: "Please enter the course's estimated time length"
-          },
-          notEmpty: {
-            msg: "Please enter the course's estimated time length"
-          }
-        }
+        // allowNull: false,
+        // validate: {
+        //   notNull: {
+        //     msg: "Please enter the course's estimated time length"
+        //   },
+        //   notEmpty: {
+        //     msg: "Please enter the course's estimated time length"
+        //   }
+        // }
       },
       materialsNeeded: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notNull: {
-            msg: "Please list the required course materials that will be needed by the student"
-          },
-          notEmpty: {
-            msg: "Please list the required course materials that will be needed by the student"
-          }
-        }
+        // allowNull: false,
+        // validate: {
+        //   notNull: {
+        //     msg: "Please list the required course materials that will be needed by the student"
+        //   },
+        //   notEmpty: {
+        //     msg: "Please list the required course materials that will be needed by the student"
+        //   }
+        // }
       }
     },
     {

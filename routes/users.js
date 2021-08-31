@@ -33,9 +33,7 @@ router.get("/users", authenticateUser, asyncHandler(async (req, res) => {
 router.post("/users", asyncHandler(async (req, res) => {
   try {
     await User.create(req.body);
-    res.status(201).location("/").json({
-      message: "User successfully added to the database"
-    });
+    res.status(201).location("/").end();
   } catch (error) {
     console.log("Error ", error.name);
 
