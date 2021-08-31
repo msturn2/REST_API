@@ -5,6 +5,10 @@ const express = require('express');
 const morgan = require('morgan');
 const { sequelize } = require("./models");
 
+// load routes
+const users = require("./routes/users");
+const courses = require("./routes/courses");
+
 // variable to enable global error logging
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
 
@@ -20,6 +24,12 @@ app.get('/', (req, res) => {
     message: 'Welcome to the REST API project!',
   });
 });
+
+app.use(express.json());
+
+// Add middleware
+app.use("/api", users);
+app.use("/api", courses);
 
 // send 404 if no other route matched
 app.use((req, res) => {
@@ -42,7 +52,6 @@ app.use((err, req, res, next) => {
 
 // set our port
 app.set('port', process.env.PORT || 5000);
-
 
 (async () => {
   try {
